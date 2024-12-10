@@ -205,7 +205,7 @@ ctx.fill()
 
 # 填充重疊區域的顏色（位於兩個正方形重疊的區域）
 ctx.globalCompositeOperation = 'source-over'  # 恢復填充模式
-ctx.fillStyle = 'orange'  # 設定重疊區域填充顏色為橙色
+ctx.fillStyle = 'green'  # 設定重疊區域填充顏色為橙色
 
 # 重疊區域填充
 ctx.beginPath()
@@ -213,19 +213,19 @@ ctx.rect(140, 140, 130, 130)  # 重疊區域的範圍 (兩個矩形重疊部分)
 ctx.fill()
 
 # 重新繪製斜線，確保它在最上層
-ctx.strokeStyle = 'blue'  # 設定斜線顏色為藍色
+ctx.strokeStyle = 'yellow'  # 設定斜線顏色為藍色
 ctx.beginPath()
 ctx.moveTo(40, 40)
 ctx.lineTo(270, 270)  # 斜線
 ctx.stroke()
 
 # 最後繪製所有的邊框，確保線條不被遮蓋
-ctx.strokeStyle = 'red'   # 第一個矩形的邊框顏色
+ctx.strokeStyle = 'purple'   # 第一個矩形的邊框顏色
 ctx.beginPath()
 ctx.rect(40, 40, 230, 230)  # 第一個矩形的位置和大小
 ctx.stroke()
 
-ctx.strokeStyle = 'green'  # 第二個矩形的邊框顏色
+ctx.strokeStyle = 'red'  # 第二個矩形的邊框顏色
 ctx.beginPath()
 ctx.rect(140, 140, 220, 220)  # 第二個矩形的位置和大小
 ctx.stroke()
@@ -239,8 +239,7 @@ ctx.beginPath()
 ctx.arc(center_x2, center_y2, radius2, 0, 2 * 3.14159)  # 第二個圓
 ctx.stroke()
 </script>
-</p>
-<h1>HW 2</h1>
+</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
