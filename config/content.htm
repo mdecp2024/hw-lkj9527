@@ -470,9 +470,7 @@ draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 <p><span>心得:雖然這三個程式只用了一些基礎語法，但是要在無數種判別式內想出一種可行且最短的還是挺費腦子的。</span></p>
 <p><span>隨堂小考:<a href="https://gist.github.com/lkj9527/a115b136baa6d4e9c42cec2307dcaf14">add_avoid_3,8</a></span></p>
 <p><span>答案:3092</span></p>
-<h3>w16_exam1</h3>
-<p><a href="https://gist.github.com/lkj9527/fd54e1ea44c8729d93064f9a667a3970">exam1 gist連結</a></p>
-<p>影片連結:<a href="https://youtu.be/sxe-sJG6qCQ">https://youtu.be/sxe-sJG6qCQ</a></p><h3>Random</h3>
+<h3>Random</h3>
 <h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
@@ -482,6 +480,79 @@ draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 <p>PART 3: Introduction to the for loop</p>
 <p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 2 Exam</h2>
+<h3>w16_exam1</h3>
+<p><a href="https://gist.github.com/lkj9527/fd54e1ea44c8729d93064f9a667a3970">exam1 gist連結</a></p>
+<p><a href="https://redesigned-chainsaw-7vr46r7r4qq4hp9vr-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/lkj9527/fd54e1ea44c8729d93064f9a667a3970/raw/08e563b41fdd04d00353348872a436fcab6a0058/w16_exam1">Brython程式演示連結</a></p>
+<p></p>
+<p>繪圖範例</p>
+<!-- 導入 Brython 程式庫 -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<div id="brython_div1"></div>
+<script type="text/python3">
+    from browser import document
+    from browser.svg import svg, line, text, polygon, rect, circle
+
+    # 設定繪圖參數
+    origin_x, origin_y = 31, 16  # 修改原點座標
+    pixel_size = 2
+
+    # 建立繪圖區域
+    svg_area = svg(width=500, height=500)
+    document["brython_div1"] <= svg_area
+
+    # 繪製 X 軸
+    svg_area <= line(x1=origin_x, y1=origin_y, x2=500, y2=origin_y, stroke="black", stroke_width=pixel_size)
+    svg_area <= text("X", x=480, y=origin_y + 15, font_size="12px")
+
+    # 繪製 Y 軸
+    svg_area <= line(x1=origin_x, y1=origin_y, x2=origin_x, y2=500, stroke="black", stroke_width=pixel_size)
+    svg_area <= text("Y", x=origin_x - 15, y=490, font_size="12px")
+
+    # 標示原點
+    svg_area <= text("(31, 16)", x=origin_x + 5, y=origin_y + 15, font_size="12px")
+
+    # 繪製圖形
+    # 等腰六邊形（準確的等腰六邊形）
+    hexagon_points = [
+        (40, 105),  # 左上
+        (60, 70),   # 上中
+        (100, 70),   # 右上
+        (120, 105), # 右下
+        (100, 140),  # 下中
+        (60, 140)   # 左下
+    ]
+    svg_area <= polygon(points=" ".join(f"{x},{y}" for x, y in hexagon_points), fill="orange")
+
+    # 菱形（正確位置與比例）
+    diamond_points = [
+        (132.5, 105),  # 左
+        (155, 60),  # 上
+        (177.5, 105),  # 右
+        (155, 145)   # 下
+    ]
+    svg_area <= polygon(points=" ".join(f"{x},{y}" for x, y in diamond_points), fill="teal")
+
+    # 小型三角形（在菱形右下方）
+    triangle_points = [
+        (185, 110),  # 左下
+        (165, 145),  # 頂點
+        (205, 145)   # 右下
+    ]
+    svg_area <= polygon(points=" ".join(f"{x},{y}" for x, y in triangle_points), fill="cyan")
+
+    # 圓形
+    svg_area <= circle(cx=240, cy=105, r=35, fill="magenta")
+
+    # 正方形
+    svg_area <= rect(x=290, y=70, width=70, height=70, fill="gold")
+
+    # 長方形
+    svg_area <= rect(x=380, y=90, width=90, height=30, fill="navy")
+    
+</script>
+<p>影片連結:</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/mV72fXJ8qR8" width="560"></iframe></p><h3>其他</h3>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>HW 3</h1>
@@ -489,6 +560,7 @@ draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 3 Exam</h2>
+<h3>w16_exam2</h3>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>HW 4</h1>
@@ -501,6 +573,7 @@ draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 <p style="padding-left: 60px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
 <p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 4 Exam</h2>
+<h3>w16_exam3</h3>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>Final Report</h1>
