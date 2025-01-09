@@ -142,9 +142,85 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4<br /><h1>w16_exam2</h1>
-<p>每六人為一組進行協同程式練習</p>
-<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
+<p>gist:<a href="https://gist.github.com/lkj9527/445951856023c7478be19e827bcb6c0c">https://gist.github.com/lkj9527/445951856023c7478be19e827bcb6c0c</a></p>
+<p><a href="https://redesigned-chainsaw-7vr46r7r4qq4hp9vr-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/lkj9527/445951856023c7478be19e827bcb6c0c/raw/6fc92840efbc61e51ddc7ede179c673990f7d1c2/Exam2">程式碼在brython執行</a></p>
+<p>以下為圖形</p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=300, height=300)  # 設定迷宮畫布大小
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 16)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 16)", 35, 15)
+
+# 定義黑色線條的屬性
+ctx.strokeStyle = "black"
+ctx.lineWidth = 2
+
+# 開始繪製迷宮 (座標偏移以 (31, 02) 為起點)
+offset_x = 31
+offset_y = 2
+
+# 繪製迷宮線條
+ctx.beginPath()
+ctx.moveTo(offset_x + 0, offset_y + 0) 
+ctx.lineTo(offset_x + 86, offset_y + 0)
+ctx.moveTo(offset_x + 0, offset_y + 0)
+ctx.lineTo(offset_x + 0, offset_y + 200)
+ctx.moveTo(offset_x + 120, offset_y + 0)
+ctx.lineTo(offset_x + 200, offset_y + 0)
+ctx.moveTo(offset_x + 200, offset_y + 0)
+ctx.lineTo(offset_x + 200, offset_y + 200)
+ctx.lineTo(offset_x + 120, offset_y + 200)
+ctx.moveTo(offset_x + 200, offset_y + 200)
+ctx.moveTo(offset_x + 0, offset_y + 200) 
+ctx.lineTo(offset_x + 86, offset_y + 200)
+ctx.moveTo(offset_x + 86, offset_y + 157) 
+ctx.lineTo(offset_x + 86, offset_y + 200)
+ctx.moveTo(offset_x + 86, offset_y + 157) 
+ctx.lineTo(offset_x + 126, offset_y + 157)
+ctx.moveTo(offset_x + 160, offset_y + 120) 
+ctx.lineTo(offset_x + 160, offset_y + 200)
+ctx.moveTo(offset_x + 160, offset_y + 120) 
+ctx.lineTo(offset_x + 50, offset_y + 120)
+ctx.moveTo(offset_x + 50, offset_y + 120) 
+ctx.lineTo(offset_x + 50, offset_y + 163)
+ctx.moveTo(offset_x + 126, offset_y + 80) 
+ctx.lineTo(offset_x + 126, offset_y + 120)
+ctx.moveTo(offset_x + 0, offset_y + 80) 
+ctx.lineTo(offset_x + 86, offset_y + 80)
+ctx.moveTo(offset_x + 86, offset_y + 40) 
+ctx.lineTo(offset_x + 86, offset_y + 80)
+ctx.moveTo(offset_x + 40, offset_y + 40) 
+ctx.lineTo(offset_x + 160, offset_y + 40)
+ctx.moveTo(offset_x + 160, offset_y + 40) 
+ctx.lineTo(offset_x + 160, offset_y + 83)
+ctx.stroke()
+</script>
+</p><br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
         
     <!-- footer -->
       <div class="container">
